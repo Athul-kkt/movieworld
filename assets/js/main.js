@@ -134,11 +134,33 @@
     $('.venobox').venobox();
   });
 
+
   // jQuery counterUp
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000
   });
+$(document).ready( function() {
+//  $("#footer1").hide();
+$.getJSON("http://movieworld-xyz.stackstaging.com/api/movies", function(data){
+//            if (data.length < 15000)
+  document.getElementById("pl").style.height = data.length * 150 + "px";
+
+  console.log(data);
+  var container ="";
+
+    for (var x in data) {
+    console.log(data[x].name);
+    console.log(data[x].lan);
+    var im =[];
+    var res = data[x].image.slice(7);
+    console.log(res);
+
+
+    $('#pl').append('<div class="col-lg-4 col-md-6 portfolio-item filter-eng " ><img src="'+res+'" class="img-fluid" alt=""><div class="portfolio-info" id="jocker"><h4>' + data[x].name +'</h4><p>'+ data[x].lan +'</p><p><a id="URL" href="page2.html?name='+data[x].name+'" class="details-link" title="Download">Download <i class="bx bx-arrow-to-bottom"></i></a></p></div></div>' );}
+
+});
+});
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
@@ -198,6 +220,13 @@
     loop: true,
     items: 1
   });
+
+   // jQuery counterUp
+  $('[data-toggle="counter-up"]').counterUp({
+    delay: 10,
+    time: 1000
+  });
+
 
   // Initi AOS
   AOS.init({

@@ -2851,8 +2851,8 @@ proto._resetLayout = function() {
   this.x = 0;
   this.y = 0;
   this.maxY = 0;
-  this._getMeasurement( 'gutter', 'outerWidth' );
-};
+  this._getMeasurement( 'gutte, 'outerWidth' );
+};r'
 
 proto._getItemLayoutPosition = function( item ) {
   item.getSize();
